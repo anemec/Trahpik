@@ -5,6 +5,7 @@ const Home = () => {
     { id: 'geometric-waves', title: 'Geometric Waves', description: 'A mesmerizing pattern of geometric waves' },
     { id: 'color-gradient', title: 'Color Gradient', description: 'Smooth color transitions and gradients' },
     { id: 'particle-system', title: 'Particle System', description: 'Dynamic particle animation system' },
+    { id: 'elevated-dots', title: 'Elevated Dots', description: 'Minimalist composition with depth and shadows' },
   ];
 
   return (

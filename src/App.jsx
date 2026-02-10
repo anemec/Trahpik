@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import GeometricWaves from './pages/art/GeometricWaves';
 import ColorGradient from './pages/art/ColorGradient';
 import ParticleSystem from './pages/art/ParticleSystem';
+import ElevatedDots from './pages/art/ElevatedDots';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/art/geometric-waves" element={<GeometricWaves />} />
         <Route path="/art/color-gradient" element={<ColorGradient />} />
         <Route path="/art/particle-system" element={<ParticleSystem />} />
+        <Route path="/art/elevated-dots" element={<ElevatedDots />} />
       </Routes>
     </Router>
   );
