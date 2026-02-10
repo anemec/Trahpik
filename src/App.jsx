@@ -7,7 +7,7 @@ import ElevatedDots from './pages/art/ElevatedDots';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/Trahpik">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/art/geometric-waves" element={<GeometricWaves />} />
