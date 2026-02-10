@@ -12,8 +12,8 @@ const ParticleSystem = () => {
     let animationFrameId;
 
     const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
 
     resizeCanvas();
@@ -96,48 +96,17 @@ const ParticleSystem = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col">
-      <header className="bg-gray-800 p-4 shadow-lg">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link to="/" className="text-white hover:text-purple-400 transition-colors flex items-center gap-2">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            <span className="text-lg font-semibold">Back to Gallery</span>
-          </Link>
-        </div>
-      </header>
+    <div className="relative w-full h-screen bg-gray-900 overflow-hidden">
+      <Link
+        to="/"
+        className="fixed top-6 left-6 z-50 text-white hover:text-purple-400 transition-colors"
+      >
+        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+      </Link>
 
-      <main className="flex-1 container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Particle System</h1>
-          <p className="text-gray-300 mb-8 text-lg">
-            An interactive particle system where colorful particles drift and connect,
-            forming an ever-changing network of relationships.
-          </p>
-
-          <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl">
-            <canvas
-              ref={canvasRef}
-              className="w-full aspect-video md:aspect-[16/9]"
-            />
-          </div>
-
-          <div className="mt-8 bg-gray-800 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-white mb-4">About This Piece</h2>
-            <p className="text-gray-300 leading-relaxed mb-4">
-              This generative artwork simulates a particle system where individual particles
-              move independently through space. When particles come close to each other,
-              they form temporary connections, creating a dynamic network visualization.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-              Each particle has its own lifecycle, fading in and out of existence while
-              continuously moving. The connections between particles vary in opacity based
-              on their distance, creating depth and visual interest.
-            </p>
-          </div>
-        </div>
-      </main>
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
     </div>
   );
 };
